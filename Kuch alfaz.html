@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kuch Alfaaz by Satya</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,serif;
+    background:#f5f8f4;
+    color:#1f2a24;
+    line-height:1.8;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #dce5df;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#183b2b;
+}
+
+.logo small{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#789485;
+    margin-top:-5px;
+}
+
+nav a{
+    margin-left:22px;
+    text-decoration:none;
+    color:#294638;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:620px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 7%;
+    position:relative;
+    background:
+    linear-gradient(
+        rgba(8,53,38,.20),
+        rgba(4,37,27,.55)
+    ),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,92px);
+    line-height:1;
+    text-shadow:0 4px 20px rgba(0,0,0,.35);
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#d9f6c9;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:650px;
+    margin:auto;
+    text-shadow:0 2px 10px rgba(0,0,0,.4);
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:30px;
+    padding:13px 25px;
+    border-radius:30px;
+    background:white;
+    color:#183b2b;
+    text-decoration:none;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    padding:80px 7% 40px;
+}
+
+.intro h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.intro p{
+    color:#65736b;
+    font-family:Arial,sans-serif;
+}
+
+/* ARTICLES */
+
+.articles{
+    max-width:1150px;
+    margin:auto;
+    padding:50px 7% 90px;
+}
+
+.section-title{
+    font-size:40px;
+    margin-bottom:35px;
+    text-align:center;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(26,65,44,.09);
+    border:1px solid #e0e9e2;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:245px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.tag{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    background:#e6f3e8;
+    color:#3d7150;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.card h3{
+    font-size:26px;
+    line-height:1.3;
+    margin:14px 0 10px;
+}
+
+.card p{
+    color:#69756e;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+}
+
+.read{
+    display:inline-block;
+    margin-top:18px;
+    color:#24613d;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* ARTICLES */
+
+.full-article{
+    max-width:850px;
+    margin:60px auto;
+    padding:60px 7%;
+    background:white;
+    border-radius:25px;
+    box-shadow:0 8px 35px rgba(0,0,0,.06);
+}
+
+.full-article h2{
+    font-size:42px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.full-article p{
+    color:#56635b;
+    margin-bottom:20px;
+    font-size:17px;
+}
+
+.signature{
+    margin-top:35px;
+    font-size:…20px;
+    font-style:italic;
+    color:#24563a;
+    text-align:right;
+}
+
+/* ABOUT */
+
+.about{
+    background:#e7f1e8;
+    text-align:center;
+    padding:90px 7%;
+}
+
+.about h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#59685e;
+    font-family:Arial,sans-serif;
+}
+
+/* FOOTER */
+
+footer{
+    background:#183b2b;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    font-family:Arial,sans-serif;
+}
+
+footer p{
+    opacity:.8;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    nav a{
+        margin-left:10px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .intro h2,
+    .section-title,
+    .about h2{
+        font-size:32px;
+    }
+
+    .full-article h2{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+Kuch Alfaaz by Satya
+<small>WORDS • THOUGHTS • JOURNEY</small>
+</div>
+
+<nav>
+<a href="#stories">Stories</a>
+<a href="#about">About</a>
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Kuch <span>Alfaaz</span>
+</h1>
+
+<p>
+Pahadon ki khamoshi, baarish ki boondein,
+safar ki kahaniyan aur dil se nikle kuch alfaaz.
+</p>
+
+<a href="#stories" class="hero-button">
+Explore Stories ↓
+</a>
+
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<h2>
+Kuch baatein likhi nahi jaati...
+</h2>
+
+<p>
+Bas mehsoos ki jaati hain.
+
+Kuch Alfaaz unhi ehsaason ka ek chhota sa safar hai —
+nature, pahad, baarish, safar, chai aur zindagi ke un palon ka
+jo dil ke kareeb reh jaate hain.
+</p>
+
+</section>
+
+
+<!-- STORIES -->
+
+<section class="articles" id="stories">
+
+<h2 class="section-title">
+Latest Stories
+</h2>
+
+<div class="grid">
+
+
+<!-- CARD 1 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<span class="tag">Travel</span>
+
+<h3>Pahadon Mein Sukoon</h3>
+
+<p>
+Kabhi kabhi zindagi se door jaana hi
+khud ke kareeb aane ka sabse khoobsurat tareeka hota hai.
+</p>
+
+<a href="#pahad" class="read">
+Read Story →
+</a>
+
+</div>
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<span class="tag">Nature</span>
+
+<h3>Jharne Ki Awaaz</h3>
+
+<p>
+Jharne ki awaaz mein ek ajeeb sa sukoon hota hai,
+jaise nature khud kuch keh raha ho.
+</p>
+
+<a href="#waterfall" class="read">
+Read Story →
+</a>
+
+</div>
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<span class="tag">Rain</span>
+
+<h3>Baarish Aur Woh Shaam</h3>
+
+<p>
+Baarish ki halki boondein aur ek khamosh shaam,
+kabhi kabhi itna hi kaafi hota hai.
+</p>
+
+<a …href="#baarish" class="read">
+Read Story →
+</a>
+
+</div>
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<span class="tag">Journey</span>
+
+<h3>Safar Aur Raaste</h3>
+
+<p>
+Manzil se zyada khoobsurat kabhi kabhi
+woh raaste hote hain jo humein badal dete hain.
+</p>
+
+<a href="#safar" class="read">
+Read Story →
+</a>
+
+</div>
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<span class="tag">Lifestyle</span>
+
+<h3>Chai, Baarish Aur Khamoshi</h3>
+
+<p>
+Ek cup chai, khidki ke bahar baarish
+aur kuch apne khayal.
+</p>
+
+<a href="#chai" class="read">
+Read Story →
+</a>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FULL ARTICLE 1 -->
+
+<section class="full-article" id="pahad">
+
+<h2>
+Pahadon Mein Sukoon
+</h2>
+
+<p>
+Pahad sirf jagah nahi hote. Pahad ek ehsaas hote hain.
+Jab shehar ki bheed aur shor se dil thak jaata hai,
+tab pahadon ki khamoshi bahut kuch keh jaati hai.
+</p>
+
+<p>
+Thandi hawa, door tak फैले hue pahaad aur badalon ke beech
+se nikalti roshni — sab kuch ek alag hi duniya jaisa lagta hai.
+</p>
+
+<p>
+Shayad isi liye kuch log baar baar pahadon ki taraf lautte hain.
+Kyunki wahan unhe sirf sukoon nahi,
+balki khud se milne ka ek mauka bhi milta hai.
+</p>
+
+<div class="signature">
+— Satya
+</div>
+
+</section>
+
+
+<!-- FULL ARTICLE 2 -->
+
+<section class="full-article" id="waterfall">
+
+<h2>
+Jharne Ki Awaaz
+</h2>
+
+<p>
+Paani jab pahadon se neeche girta hai,
+toh uski awaaz kisi music se kam nahi lagti.
+</p>
+
+<p>
+Kuch der uske paas baithkar bas sunte raho,
+toh dimaag ki saari uljhan dheere dheere shaant hone lagti hai.
+</p>
+
+<p>
+Nature ke paas jawab nahi hote,
+lekin woh humein apne sawaalon ke saath
+thoda shaant rehna zaroor sikha deta hai.
+</p>
+
+<div class="signature">
+— Satya
+</div>
+
+</section>
+
+
+<!-- FULL ARTICLE 3 -->
+
+<section class="full-article" id="baarish">
+
+<h2>
+Baarish Aur Woh Shaam
+</h2>
+
+<p>
+Baarish ki boondein jab khidki par girti hain,
+toh purani yaadein apne aap yaad aane lagti hain.
+</p>
+
+<p>
+Ek thandi hawa, aasman mein badal
+aur haath mein garam chai —
+shayad simple moments hi sabse khoobsurat hote hain.
+</p>
+
+<p>
+Kuch shaamein bina kisi wajah ke yaad reh jaati hain.
+Bas isliye kyunki us waqt dil halka sa khush tha.
+</p>
+
+<div class="signature">
+— Satya
+</div>
+
+</section>
+
+
+<!-- FULL ARTICLE 4 -->
+
+<section class="full-article" id="safar">
+
+<h2>
+Safar Aur Raaste
+</h2>
+
+<p>
+Safar ka asli maza sirf destination tak pahunchne mein nahi,
+balki us raaste ko mehsoos karne mein hota hai.
+</p>
+
+<p>
+Kabhi koi anjaan road,
+kabhi khidki ke bahar badalte hue views,
+aur kabhi bina plan ke liya gaya koi turn —
+yehi moments safar ko yaadgaar bana dete hain.
+</p>
+
+<p>
+Har safar humein kuch na kuch sikha kar jaata hai.
+</p>
+
+<div class="signature">
+— Satya
+</div>
+
+</section>
+
+
+<!-- FULL ARTICLE 5 -->
+
+<section class="full-article" id="chai">
+
+<h2>
+Chai, Baarish Aur Khamoshi
+</h2>
+
+<p>
+Chai ka ek cup aur baarish ka mausam —
+dono saath ho toh waqt thoda dheere chalne lagta hai.
+</p>
+
+<p>
+Kabhi phone side mein rakhkar,
+khidki ke paas baithkar baarish dekhna bhi
+ek chhoti si luxury lagti hai.
+</p>
+
+<p>
+Zindagi ke busy moments ke beech
+aise chhote breaks hi humein phir se fresh kar dete hain.
+</p>
+
+<div class="signature">
+— Satya
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2>
+Kuch Alfaaz by Satya
+</h2>
+
+<p>
+Ye website un kahaniyon, thoughts aur moments ke naam hai
+jo shayad chhote hain, lekin dil mein apni jagah bana lete hain.
+
+Yahan main apne words mein
+safar, nature, pahad, baarish aur zindagi ke
+kuch khaas pal share karta hoon.
+
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong>
+Kuch Alfaaz by Satya
+</strong>
+
+<p>
+Stories • Thoughts • Travel • Memories
+</p>
+
+<p>
+© 2026 Kuch Alfaaz. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
