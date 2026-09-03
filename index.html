@@ -8,315 +8,327 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Georgia,serif;
-    background:#f5f8f4;
-    color:#1f2a24;
-    line-height:1.8;
+font-family:Georgia,"Times New Roman",serif;
+background:#f5f0e6;
+color:#26352b;
+line-height:1.7;
 }
 
 /* HEADER */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    padding:18px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid #dce5df;
+position:sticky;
+top:0;
+z-index:1000;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(245,240,230,.96);
+border-bottom:1px solid #d7cdbb;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#183b2b;
+font-size:25px;
+font-weight:bold;
+letter-spacing:-1px;
 }
 
-.logo small{
-    display:block;
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:2px;
-    color:#789485;
-    margin-top:-5px;
+.logo span{
+color:#a27b43;
+}
+
+nav{
+display:flex;
+gap:22px;
 }
 
 nav a{
-    margin-left:22px;
-    text-decoration:none;
-    color:#294638;
-    font-family:Arial,sans-serif;
-    font-size:14px;
+text-decoration:none;
+color:#26352b;
+font-size:14px;
+}
+
+nav a:hover{
+color:#a27b43;
 }
 
 /* HERO */
 
 .hero{
-    min-height:620px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:80px 7%;
-    position:relative;
-    background:
-    linear-gradient(
-        rgba(8,53,38,.20),
-        rgba(4,37,27,.55)
-    ),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90");
-    background-size:cover;
-    background-position:center;
-    color:white;
+min-height:78vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+
+background:
+linear-gradient(rgba(20,35,25,.35),rgba(20,35,25,.55)),
+url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=90")
+center/cover;
 }
 
 .hero-content{
-    max-width:850px;
+position:relative;
+z-index:2;
+color:white;
+padding:20px;
+}
+
+.hero small{
+letter-spacing:4px;
+font-size:12px;
 }
 
 .hero h1{
-    font-size:clamp(48px,8vw,92px);
-    line-height:1;
-    text-shadow:0 4px 20px rgba(0,0,0,.35);
-    margin-bottom:25px;
+font-size:clamp(55px,9vw,100px);
+line-height:1;
+margin:15px 0;
 }
 
 .hero h1 span{
-    color:#d9f6c9;
+color:#e0b878;
 }
 
 .hero p{
-    font-size:20px;
-    max-width:650px;
-    margin:auto;
-    text-shadow:0 2px 10px rgba(0,0,0,.4);
+font-size:18px;
+max-width:600px;
+margin:auto;
 }
 
-.hero-button{
-    display:inline-block;
-    margin-top:30px;
-    padding:13px 25px;
-    border-radius:30px;
-    background:white;
-    color:#183b2b;
-    text-decoration:none;
-    font-family:Arial,sans-serif;
-    font-weight:bold;
+/* WATERFALL */
+
+.waterfall{
+position:absolute;
+right:8%;
+bottom:0;
+width:90px;
+height:55%;
+opacity:.45;
+
+background:linear-gradient(
+to bottom,
+rgba(255,255,255,.8),
+rgba(255,255,255,.15)
+);
+
+filter:blur(2px);
+animation:flow 1.4s linear infinite;
 }
 
-/* INTRO */
-
-.intro{
-    text-align:center;
-    max-width:800px;
-    margin:auto;
-    padding:80px 7% 40px;
+@keyframes flow{
+0%{
+transform:translateY(-10px);
 }
 
-.intro h2{
-    font-size:38px;
-    margin-bottom:15px;
+100%{
+transform:translateY(15px);
+}
 }
 
-.intro p{
-    color:#65736b;
-    font-family:Arial,sans-serif;
+/* CONTAINER */
+
+.container{
+width:min(1150px,90%);
+margin:auto;
 }
 
-/* ARTICLES */
-
-.articles{
-    max-width:1150px;
-    margin:auto;
-    padding:50px 7% 90px;
-}
+/* SECTION TITLE */
 
 .section-title{
-    font-size:40px;
-    margin-bottom:35px;
-    text-align:center;
+text-align:center;
+margin:80px 0 40px;
 }
 
+.section-title span{
+color:#a27b43;
+font-size:12px;
+letter-spacing:4px;
+}
+
+.section-title h2{
+font-size:38px;
+margin-top:8px;
+}
+
+/* SEARCH */
+
+.search-box{
+display:flex;
+justify-content:center;
+margin:25px auto 35px;
+}
+
+.search-box input{
+width:min(600px,90%);
+padding:15px 20px;
+border:1px solid #cfc4b2;
+border-radius:30px;
+background:#fffdf7;
+font-size:16px;
+outline:none;
+}
+
+.search-box input:focus{
+border-color:#a27b43;
+}
+
+/* FILTERS */
+
+.filters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:40px;
+}
+
+.filter{
+padding:9px 18px;
+border:1px solid #cfc4b2;
+border-radius:30px;
+background:transparent;
+cursor:pointer;
+color:#26352b;
+}
+
+.filter.active,
+.filter:hover{
+background:#294936;
+color:white;
+}
+
+/* CARDS */
+
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:28px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
 }
 
 .card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 8px 30px rgba(26,65,44,.09);
-    border:1px solid #e0e9e2;
-    transition:.3s;
+background:#fffdf7;
+border:1px solid #ddd2c0;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.07);
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+transform:translateY(-7px);
+box-shadow:0 18px 35px rgba(0,0,0,.13);
 }
 
 .card img{
-    width:100%;
-    height:245px;
-    object-fit:cover;
+width:100%;
+height:210px;
+object-fit:cover;
 }
 
 .card-content{
-    padding:25px;
+padding:22px;
 }
 
-.tag{
-    display:inline-block;
-    padding:5px 12px;
-    border-radius:20px;
-    background:#e6f3e8;
-    color:#3d7150;
-    font-family:Arial,sans-serif;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:1px;
+.card small{
+color:#a27b43;
+letter-spacing:2px;
 }
 
 .card h3{
-    font-size:26px;
-    line-height:1.3;
-    margin:14px 0 10px;
+margin:8px 0;
+font-size:24px;
 }
 
 .card p{
-    color:#69756e;
-    font-family:Arial,sans-serif;
-    font-size:14px;
+color:#687168;
+margin-bottom:15px;
 }
 
 .read{
-    display:inline-block;
-    margin-top:18px;
-    color:#24613d;
-    font-family:Arial,sans-serif;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* ARTICLES */
-
-.full-article{
-    max-width:850px;
-    margin:60px auto;
-    padding:60px 7%;
-    background:white;
-    border-radius:25px;
-    box-shadow:0 8px 35px rgba(0,0,0,.06);
-}
-
-.full-article h2{
-    font-size:42px;
-    line-height:1.2;
-    margin-bottom:25px;
-}
-
-.full-article p{
-    color:#56635b;
-    margin-bottom:20px;
-    font-size:17px;
-}
-
-.signature{
-    margin-top:35px;
-    font-size:…20px;
-    font-style:italic;
-    color:#24563a;
-    text-align:right;
+color:#294936;
+text-decoration:none;
+font-weight:bold;
 }
 
 /* ABOUT */
 
 .about{
-    background:#e7f1e8;
-    text-align:center;
-    padding:90px 7%;
-}
-
-.about h2{
-    font-size:42px;
-    margin-bottom:20px;
+margin:100px auto;
+max-width:800px;
+text-align:center;
+padding:45px;
+background:#ebe3d2;
+border-radius:20px;
 }
 
 .about p{
-    max-width:700px;
-    margin:auto;
-    color:#59685e;
-    font-family:Arial,sans-serif;
+margin-bottom:25px;
+}
+
+.instagram{
+display:inline-block;
+padding:12px 24px;
+background:#294936;
+color:white;
+text-decoration:none;
+border-radius:30px;
 }
 
 /* FOOTER */
 
 footer{
-    background:#183b2b;
-    color:white;
-    text-align:center;
-    padding:35px 20px;
-    font-family:Arial,sans-serif;
+text-align:center;
+padding:55px 20px;
+background:#294936;
+color:white;
+}
+
+footer span{
+color:#e0b878;
 }
 
 footer p{
-    opacity:.8;
-    font-size:13px;
-    margin-top:5px;
+opacity:.75;
+margin:8px 0;
 }
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
-    header{
-        padding:15px 5%;
-    }
+nav{
+display:none;
+}
 
-    .logo{
-        font-size:19px;
-    }
+.grid{
+grid-template-columns:1fr;
+}
 
-    nav a{
-        margin-left:10px;
-        font-size:12px;
-    }
+.hero{
+min-height:70vh;
+}
 
-    .hero{
-        min-height:560px;
-    }
+.hero h1{
+font-size:58px;
+}
 
-    .hero h1{
-        font-size:55px;
-    }
+.section-title h2{
+font-size:30px;
+}
 
-    .hero p{
-        font-size:17px;
-    }
-
-    .intro h2,
-    .section-title,
-    .about h2{
-        font-size:32px;
-    }
-
-    .full-article h2{
-        font-size:32px;
-    }
 }
 </style>
 </head>
@@ -328,11 +340,11 @@ footer p{
 <header>
 
 <div class="logo">
-Kuch Alfaaz by Satya
-<small>WORDS • THOUGHTS • JOURNEY</small>
+Kuch Alfaaz <span>by Satya</span>
 </div>
 
 <nav>
+<a href="#home">Home</a>
 <a href="#stories">Stories</a>
 <a href="#about">About</a>
 </nav>
@@ -342,338 +354,489 @@ Kuch Alfaaz by Satya
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
+
+<div class="waterfall"></div>
 
 <div class="hero-content">
+
+<small>A JOURNAL BY SATYA</small>
 
 <h1>
 Kuch <span>Alfaaz</span>
 </h1>
 
 <p>
-Pahadon ki khamoshi, baarish ki boondein,
-safar ki kahaniyan aur dil se nikle kuch alfaaz.
-</p>
-
-<a href="#stories" class="hero-button">
-Explore Stories ↓
-</a>
-
-</div>
-
-</section>
-
-
-<!-- INTRO -->
-
-<section class="intro">
-
-<h2>
-Kuch baatein likhi nahi jaati...
-</h2>
-
-<p>
-Bas mehsoos ki jaati hain.
-
-Kuch Alfaaz unhi ehsaason ka ek chhota sa safar hai —
-nature, pahad, baarish, safar, chai aur zindagi ke un palon ka
+Stories, thoughts, travel aur woh moments
 jo dil ke kareeb reh jaate hain.
 </p>
+
+</div>
 
 </section>
 
 
 <!-- STORIES -->
 
-<section class="articles" id="stories">
+<main class="container">
 
-<h2 class="section-title">
-Latest Stories
-</h2>
+<section id="stories">
+
+<div class="section-title">
+
+<span>THE JOURNAL</span>
+
+<h2>Stories Worth Reading</h2>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="search"
+id="searchInput"
+placeholder="Search stories..."
+oninput="searchStories()"
+>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button
+class="filter active"
+onclick="filterCategory('All',this)">
+All
+</button>
+
+<button
+class="filter"
+onclick="filterCategory('Travel',this)">
+Travel
+</button>
+
+<button
+class="filter"
+onclick="filterCategory('Nature',this)">
+Nature
+</button>
+
+<button
+class="filter"
+onclick="filterCategory('Rain',this)">
+Rain
+</button>
+
+<button
+class="filter"
+onclick="filterCategory('Life',this)">
+Life
+</button>
+
+</div>
+
+
+<!-- STORY GRID -->
 
 <div class="grid">
 
 
-<!-- CARD 1 -->
+<!-- STORY 1 -->
 
-<div class="card">
+<div class="card" data-category="Travel">
 
 <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85">
 
 <div class="card-content">
 
-<span class="tag">Travel</span>
+<small>TRAVEL</small>
 
 <h3>Pahadon Mein Sukoon</h3>
 
 <p>
-Kabhi kabhi zindagi se door jaana hi
-khud ke kareeb aane ka sabse khoobsurat tareeka hota hai.
+Kabhi kabhi zindagi ki bheed se door jaana
+hi sabse bada sukoon hota hai.
 </p>
 
-<a href="#pahad" class="read">
+<a class="read" href="article.html?story=1">
 Read Story →
 </a>
 
 </div>
+
 </div>
 
 
-<!-- CARD 2 -->
+<!-- STORY 2 -->
 
-<div class="card">
+<div class="card" data-category="Nature">
 
 <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1000&q=85">
 
 <div class="card-content">
 
-<span class="tag">Nature</span>
+<small>NATURE</small>
 
 <h3>Jharne Ki Awaaz</h3>
 
 <p>
-Jharne ki awaaz mein ek ajeeb sa sukoon hota hai,
-jaise nature khud kuch keh raha ho.
+Paani ki awaaz, thandi hawa aur nature
+ka ek alag hi music.
 </p>
 
-<a href="#waterfall" class="read">
+<a class="read" href="article.html?story=2">
 Read Story →
 </a>
 
 </div>
+
 </div>
 
 
-<!-- CARD 3 -->
+<!-- STORY 3 -->
 
-<div class="card">
+<div class="card" data-category="Rain">
 
-<img src="https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=1000&q=85">
+<img src="https://images.unsplash.com/photo-1501691223387-dd0500403074?auto=format&fit=crop&w=1000&q=85">
 
 <div class="card-content">
 
-<span class="tag">Rain</span>
+<small>RAIN</small>
 
 <h3>Baarish Aur Woh Shaam</h3>
 
 <p>
-Baarish ki halki boondein aur ek khamosh shaam,
-kabhi kabhi itna hi kaafi hota hai.
+Kuch shaamein bina kisi reason ke
+yaad reh jaati hain.
 </p>
 
-<a …href="#baarish" class="read">
+<a class="read" href="article.html?story=3">
 Read Story →
 </a>
 
 </div>
+
 </div>
 
 
-<!-- CARD 4 -->
+<!-- STORY 4 -->
 
-<div class="card">
+<div class="card" data-category="Travel">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85">
+<img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85">
 
 <div class="card-content">
 
-<span class="tag">Journey</span>
+<small>TRAVEL</small>
 
 <h3>Safar Aur Raaste</h3>
 
 <p>
-Manzil se zyada khoobsurat kabhi kabhi
-woh raaste hote hain jo humein badal dete hain.
+Safar sirf destination nahi,
+raaste bhi ek kahani hote hain.
 </p>
 
-<a href="#safar" class="read">
+<a class="read" href="article.html?story=4">
 Read Story →
 </a>
 
 </div>
+
 </div>
 
 
-<!-- CARD 5 -->
+<!-- STORY 5 -->
 
-<div class="card">
+<div class="card" data-category="Rain">
+
+<img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>RAIN</small>
+
+<h3>Chai, Baarish Aur Khamoshi</h3>
+
+<p>
+Bahar baarish aur haath mein chai.
+Kabhi kabhi itna hi kaafi hota hai.
+</p>
+
+<a class="read" href="article.html?story=5">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- STORY 6 -->
+
+<div class="card" data-category="Life">
+
+<img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>LIFE</small>
+
+<h3>Naye Shehar Ki Kahani</h3>
+
+<p>
+Naya shehar, naye log aur
+ek nayi kahani.
+</p>
+
+<a class="read" href="article.html?story=6">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- STORY 7 -->
+
+<div class="card" data-category="Life">
+
+<img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>LIFE</small>
+
+<h3>Khamosh Raaste</h3>
+
+<p>
+Khamoshi ke andar bhi
+bahut si baatein hoti hain.
+</p>
+
+<a class="read" href="article.html?story=7">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- STORY 8 -->
+
+<div class="card" data-category="Rain">
+
+<img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>RAIN</small>
+
+<h3>Baarish Ke Baad</h3>
+
+<p>
+Baarish ke baad nature
+ek fresh beginning jaisi lagti hai.
+</p>
+
+<a class="read" href="article.html?story=8">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- STORY 9 -->
+
+<div class="card" data-category="Travel">
+
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>TRAVEL</small>
+
+<h3>Safar Ki Tasveer</h3>
+
+<p>
+Ek photograph kabhi kabhi
+poora moment save kar leti hai.
+</p>
+
+<a class="read" href="article.html?story=9">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- STORY 10 -->
+
+<div class="card" data-category="Life">
 
 <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=85">
 
 <div class="card-content">
 
-<span class="tag">Lifestyle</span>
+<small>LIFE</small>
 
-<h3>Chai, Baarish Aur Khamoshi</h3>
+<h3>Chai Aur Sukoon</h3>
 
 <p>
-Ek cup chai, khidki ke bahar baarish
-aur kuch apne khayal.
+Ek cup chai kabhi kabhi
+sirf chai nahi hoti.
 </p>
 
-<a href="#chai" class="read">
+<a class="read" href="article.html?story=10">
 Read Story →
 </a>
 
 </div>
+
+</div>
+
+
+<!-- STORY 11 -->
+
+<div class="card" data-category="Life">
+
+<img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>LIFE</small>
+
+<h3>Yaadon Ka Shehar</h3>
+
+<p>
+Kuch shehar memories ka
+hamesha hissa ban jaate hain.
+</p>
+
+<a class="read" href="article.html?story=11">
+Read Story →
+</a>
+
 </div>
 
 </div>
 
-</section>
 
+<!-- STORY 12 -->
 
-<!-- FULL ARTICLE 1 -->
+<div class="card" data-category="Nature">
 
-<section class="full-article" id="pahad">
+<img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85">
 
-<h2>
-Pahadon Mein Sukoon
-</h2>
+<div class="card-content">
 
-<p>
-Pahad sirf jagah nahi hote. Pahad ek ehsaas hote hain.
-Jab shehar ki bheed aur shor se dil thak jaata hai,
-tab pahadon ki khamoshi bahut kuch keh jaati hai.
-</p>
+<small>NATURE</small>
+
+<h3>Pahadon Ki Hawa</h3>
 
 <p>
-Thandi hawa, door tak फैले hue pahaad aur badalon ke beech
-se nikalti roshni — sab kuch ek alag hi duniya jaisa lagta hai.
+Thandi hawa aur open sky
+ka apna hi magic hota hai.
 </p>
 
-<p>
-Shayad isi liye kuch log baar baar pahadon ki taraf lautte hain.
-Kyunki wahan unhe sirf sukoon nahi,
-balki khud se milne ka ek mauka bhi milta hai.
-</p>
+<a class="read" href="article.html?story=12">
+Read Story →
+</a>
 
-<div class="signature">
-— Satya
 </div>
 
-</section>
-
-
-<!-- FULL ARTICLE 2 -->
-
-<section class="full-article" id="waterfall">
-
-<h2>
-Jharne Ki Awaaz
-</h2>
-
-<p>
-Paani jab pahadon se neeche girta hai,
-toh uski awaaz kisi music se kam nahi lagti.
-</p>
-
-<p>
-Kuch der uske paas baithkar bas sunte raho,
-toh dimaag ki saari uljhan dheere dheere shaant hone lagti hai.
-</p>
-
-<p>
-Nature ke paas jawab nahi hote,
-lekin woh humein apne sawaalon ke saath
-thoda shaant rehna zaroor sikha deta hai.
-</p>
-
-<div class="signature">
-— Satya
 </div>
 
-</section>
 
+<!-- STORY 13 -->
 
-<!-- FULL ARTICLE 3 -->
+<div class="card" data-category="Travel">
 
-<section class="full-article" id="baarish">
+<img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85">
 
-<h2>
-Baarish Aur Woh Shaam
-</h2>
+<div class="card-content">
 
-<p>
-Baarish ki boondein jab khidki par girti hain,
-toh purani yaadein apne aap yaad aane lagti hain.
-</p>
+<small>TRAVEL</small>
+
+<h3>Ek Chhota Sa Safar</h3>
 
 <p>
-Ek thandi hawa, aasman mein badal
-aur haath mein garam chai —
-shayad simple moments hi sabse khoobsurat hote hain.
+Har safar bada hona zaroori
+nahi hota.
 </p>
 
-<p>
-Kuch shaamein bina kisi wajah ke yaad reh jaati hain.
-Bas isliye kyunki us waqt dil halka sa khush tha.
-</p>
+<a class="read" href="article.html?story=13">
+Read Story →
+</a>
 
-<div class="signature">
-— Satya
 </div>
 
-</section>
-
-
-<!-- FULL ARTICLE 4 -->
-
-<section class="full-article" id="safar">
-
-<h2>
-Safar Aur Raaste
-</h2>
-
-<p>
-Safar ka asli maza sirf destination tak pahunchne mein nahi,
-balki us raaste ko mehsoos karne mein hota hai.
-</p>
-
-<p>
-Kabhi koi anjaan road,
-kabhi khidki ke bahar badalte hue views,
-aur kabhi bina plan ke liya gaya koi turn —
-yehi moments safar ko yaadgaar bana dete hain.
-</p>
-
-<p>
-Har safar humein kuch na kuch sikha kar jaata hai.
-</p>
-
-<div class="signature">
-— Satya
 </div>
 
-</section>
 
+<!-- STORY 14 -->
 
-<!-- FULL ARTICLE 5 -->
+<div class="card" data-category="Nature">
 
-<section class="full-article" id="chai">
+<img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85">
 
-<h2>
-Chai, Baarish Aur Khamoshi
-</h2>
+<div class="card-content">
 
-<p>
-Chai ka ek cup aur baarish ka mausam —
-dono saath ho toh waqt thoda dheere chalne lagta hai.
-</p>
+<small>NATURE</small>
+
+<h3>Woh Shaam</h3>
 
 <p>
-Kabhi phone side mein rakhkar,
-khidki ke paas baithkar baarish dekhna bhi
-ek chhoti si luxury lagti hai.
+Kuch simple moments bhi
+hamesha yaad reh jaate hain.
 </p>
+
+<a class="read" href="article.html?story=14">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- STORY 15 -->
+
+<div class="card" data-category="Life">
+
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85">
+
+<div class="card-content">
+
+<small>LIFE</small>
+
+<h3>Alfaaz</h3>
 
 <p>
-Zindagi ke busy moments ke beech
-aise chhote breaks hi humein phir se fresh kar dete hain.
+Jo baat keh nahi paate,
+use alfaaz keh dete hain.
 </p>
 
-<div class="signature">
-— Satya
+<a class="read" href="article.html?story=15">
+Read Story →
+</a>
+
+</div>
+
+</div>
+
+
 </div>
 
 </section>
@@ -683,40 +846,129 @@ aise chhote breaks hi humein phir se fresh kar dete hain.
 
 <section class="about" id="about">
 
-<h2>
-Kuch Alfaaz by Satya
-</h2>
+<div class="section-title">
+
+<span>ABOUT ME</span>
+
+<h2>Kuch Alfaaz by Satya</h2>
+
+</div>
 
 <p>
-Ye website un kahaniyon, thoughts aur moments ke naam hai
-jo shayad chhote hain, lekin dil mein apni jagah bana lete hain.
 
-Yahan main apne words mein
-safar, nature, pahad, baarish aur zindagi ke
-kuch khaas pal share karta hoon.
+Main Satya hoon, aur
+<b>Kuch Alfaaz</b> meri chhoti si digital diary hai.
+
+Yahan main travel, nature, life aur un moments
+ke baare mein likhta hoon jo dil ke kareeb reh jaate hain.
 
 </p>
 
+<a
+class="instagram"
+href="https://www.instagram.com/__sattyaa18?igsi=Z2JhejU0aWh4NHI2"
+target="_blank">
+
+Instagram ↗️
+
+</a>
+
 </section>
+
+</main>
 
 
 <!-- FOOTER -->
 
 <footer>
 
-<strong>
-Kuch Alfaaz by Satya
-</strong>
+<h3>
+Kuch Alfaaz <span>by Satya</span>
+</h3>
 
 <p>
-Stories • Thoughts • Travel • Memories
+Stories • Thoughts • Travel • Nature • Memories
 </p>
 
-<p>
-© 2026 Kuch Alfaaz. All Rights Reserved.
-</p>
+<small>
+© 2026 Kuch Alfaaz by Satya
+</small>
 
 </footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function searchStories(){
+
+const value =
+document.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+const text =
+card.innerText.toLowerCase();
+
+if(text.includes(value)){
+
+card.style.display="";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+
+function filterCategory(category,button){
+
+document
+.querySelectorAll(".filter")
+.forEach(btn=>{
+
+btn.classList.remove("active");
+
+});
+
+button.classList.add("active");
+
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+if(
+category==="All" ||
+card.dataset.category===category
+){
+
+card.style.display="";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+
+document.getElementById("searchInput").value="";
+
+}
+
+</script>
 
 </body>
 </html>
