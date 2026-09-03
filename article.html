@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuch Alfaaz by Satya</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Georgia,"Times New Roman",serif;
+background:#f5f0e6;
+color:#26352b;
+line-height:1.8;
+}
+
+.header{
+padding:22px 7%;
+border-bottom:1px solid #d7cdbb;
+background:#f5f0e6;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.logo span{
+color:#a27b43;
+}
+
+.container{
+width:min(850px,90%);
+margin:55px auto;
+}
+
+.back{
+display:inline-block;
+margin-bottom:35px;
+color:#294936;
+text-decoration:none;
+font-weight:bold;
+}
+
+.category{
+color:#a27b43;
+letter-spacing:3px;
+font-size:12px;
+font-weight:bold;
+}
+
+h1{
+font-size:clamp(42px,7vw,72px);
+line-height:1.1;
+margin:12px 0 25px;
+}
+
+.cover{
+width:100%;
+height:430px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:40px;
+}
+
+.story{
+background:#fffdf7;
+padding:45px;
+border-radius:18px;
+border:1px solid #ddd2c0;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.story p{
+margin-bottom:22px;
+font-size:18px;
+}
+
+footer{
+text-align:center;
+padding:45px 20px;
+margin-top:80px;
+background:#294936;
+color:white;
+}
+
+footer span{
+color:#e0b878;
+}
+
+@media(max-width:700px){
+.cover{height:280px}
+.story{padding:25px}
+.story p{font-size:17px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="logo">Kuch Alfaaz <span>by Satya</span></div>
+</header>
+
+<main class="container">
+
+<a href="index.html" class="back">← Back to Stories</a>
+
+<div class="category" id="category"></div>
+
+<h1 id="title"></h1>
+
+<img class="cover" id="cover" src="" alt="Story">
+
+<article class="story" id="story"></article>
+
+</main>
+
+<footer>
+<h3>Kuch Alfaaz <span>by Satya</span></h3>
+<p>Stories • Thoughts • Travel • Nature • Memories</p>
+<small>© 2026 Kuch Alfaaz by Satya</small>
+</footer>
+
+<script>
+
+const stories = {
+
+1:{
+category:"TRAVEL",
+title:"Pahadon Mein Sukoon",
+image:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Kabhi kabhi zindagi ki bheed se door jaana hi sabse bada sukoon hota hai. Pahadon ki thandi hawa, door tak faili hariyali aur aasman ki khamoshi dil ko ek alag hi ehsaas deti hai.</p>
+
+<p>Pahadon par waqt jaise thoda dheere chalne lagta hai. Na koi jaldi, na kisi cheez ka shor. Bas raaste, badal aur unke beech chalta hua ek safar.</p>
+
+<p>Subah jab pahadon ke beech se halki roshni nikalti hai, to har cheez kuch zyada hi khoobsurat lagti hai. Chai ka ek cup aur saamne ka khamosh nazara — kabhi kabhi itna hi kaafi hota hai.</p>
+
+<p>Shayad isi liye pahad sirf ek jagah nahi hote. Woh ek feeling hote hain, jahan insaan kuch waqt ke liye khud se mil pata hai.</p>
+`
+},
+
+2:{
+category:"NATURE",
+title:"Jharne Ki Awaaz",
+image:"https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Jharne ke paas khade hokar sabse pehle jo cheez mehsoos hoti hai, woh hai uski awaaz. Paani ka lagataar girna jaise nature ka apna music ho.</p>
+
+<p>Shehar ke shor se door, jharne ke paas kuch pal bitana dimaag ko ek alag hi sukoon deta hai.</p>
+
+<p>Thandi hawa aur paani ki boondein milkar ek aisa atmosphere banati hain jise words mein poori tarah explain karna mushkil hai.</p>
+`
+},
+
+3:{
+category:"RAIN",
+title:"Baarish Aur Woh Shaam",
+image:"https://images.unsplash.com/photo-1501691223387-dd0500403074?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Baarish ki ek shaam hamesha thodi alag hoti hai. Aasman grey hota hai aur sadkon par paani ki chhoti chhoti lakeerein ban jaati hain.</p>
+
+<p>Window ke paas baithkar baarish dekhna aur haath mein garam chai hona, shayad simple happiness isi ko kehte hain.</p>
+
+<p>Kuch shaamein kisi special reason ke bina bhi yaad reh jaati hain. Baarish wali shaam bhi unhi mein se ek hoti hai.</p>
+`
+},
+
+4:{
+category:"TRAVEL",
+title:"Safar Aur Raaste",
+image:"https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Safar sirf destination tak pahunchne ka naam nahi hai. Safar un raaston ka bhi naam hai jo humein raste mein kuch naya sikhaate hain.</p>
+
+<p>Kabhi road bilkul khaali hoti hai, kabhi aas paas pahad hote hain aur kabhi bas ek lambi road aur khula aasman.</p>
+
+<p>Har safar apne saath kuch memories lekar aata hai.</p>
+`
+},
+
+5:{
+category:"RAIN",
+title:"Chai, Baarish Aur Khamoshi",
+image:"https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Chai aur baarish ka combination shayad sabse simple aur beautiful combinations mein se ek hai.</p>
+
+<p>Bahar baarish ho aur andar ek cup chai ho, to khamoshi bhi achhi lagne lagti hai.</p>
+
+<p>Kuch moments ko kisi music ki zarurat nahi hoti. Baarish ki awaaz hi kaafi hoti hai.</p>
+`
+},
+
+6:{
+category:"LIFE",
+title:"Naye Shehar Ki Kahani",
+image:"https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Naya shehar hamesha thoda unfamiliar lagta hai. Nayi roads, naye faces aur naye experiences.</p>
+
+<p>Shuru mein sab kuch ajeeb lagta hai, lekin dheere dheere wahi roads familiar hone lagti hain.</p>
+
+<p>Har naya shehar humein apne baare mein kuch naya batata hai.</p>
+`
+},
+
+7:{
+category:"LIFE",
+title:"Khamosh Raaste",
+image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Kuch raaste aise hote hain jahan koi shor nahi hota. Bas hawa chalti hai aur kadmon ki awaaz sunai deti hai.</p>
+
+<p>Aise raaste kabhi kabhi humein apne thoughts ke saath time spend karne ka mauka dete hain.</p>
+
+<p>Khamoshi kabhi khaali nahi hoti. Uske andar bahut si baatein chhupi hoti hain.</p>
+`
+},
+
+8:{
+category:"RAIN",
+title:"Baarish Ke Baad",
+image:"https://images.unsplash.com/photo-1495567720989-cebdbdd97913?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Baarish ke baad hawa mein ek alag freshness hoti hai. Pedon ke patte saaf dikhte hain aur sadkein chamakne lagti hain.</p>
+
+<p>Aasman dheere dheere clear hota hai aur sunlight badalon ke beech se nikalti hai.</p>
+
+<p>Nature baarish ke baad jaise ek fresh beginning deti hai.</p>
+`
+},
+
+9:{
+category:"TRAVEL",
+title:"Safar Ki Tasveer",
+image:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Ek photograph sirf ek image nahi hoti. Kabhi kabhi woh poora moment apne andar save kar leti hai.</p>
+
+<p>Safar mein li gayi ek simple si photo bhi saalon baad purani memories wapas la sakti hai.</p>
+
+<p>Isi liye kuch pictures gallery mein nahi, dil mein save ho jaati hain.</p>
+`
+},
+
+10:{
+category:"LIFE",
+title:"Chai Aur Sukoon",
+image:"https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Ek cup chai kabhi kabhi sirf chai nahi hoti. Woh ek break hota hai, ek pause hota hai.</p>
+
+<p>Din kitna bhi busy ho, chai ke saath kuch minutes apne liye nikalna achha lagta hai.</p>
+
+<p>Simple moments hi aksar sabse zyada yaad reh jaate hain.</p>
+`
+},
+
+11:{
+category:"LIFE",
+title:"Yaadon Ka Shehar",
+image:"https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Kuch shehar humari memories ka hissa ban jaate hain. Unki roads, cafes aur chhoti chhoti jagahen kuch kahaniyan sambhal kar rakhti hain.</p>
+
+<p>Saalon baad wahi jagah dobara dekhne par purani memories ekdum fresh lagne lagti hain.</p>
+
+<p>Shayad isi ko yaadon ka shehar kehte hain.</p>
+`
+},
+
+12:{
+category:"NATURE",
+title:"Pahadon Ki Hawa",
+image:"https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Pahadon ki hawa mein kuch aisa hota hai jo shehar ki hawa se bilkul alag feel hota hai.</p>
+
+<p>Thandi hawa jab chehre ko touch karti hai to travel ki thakaan bhi kam lagne lagti hai.</p>
+
+<p>Open sky, green valleys aur fresh air — pahadon ka simple magic isi mein hai.</p>
+`
+},
+
+13:{
+category:"TRAVEL",
+title:"Ek Chhota Sa Safar",
+image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Har safar bada hona zaroori nahi. Kabhi kabhi ek chhota sa trip bhi mood completely change kar deta hai.</p>
+
+<p>Ek short drive, kuch achhe views aur thodi si khamoshi bhi ek beautiful memory bana sakti hai.</p>
+
+<p>Safar ki value distance se nahi, experience se hoti hai.</p>
+`
+},
+
+14:{
+category:"NATURE",
+title:"Woh Shaam",
+image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Kuch shaamein normal hoti hain aur kuch shaamein bina kisi reason ke special ban jaati hain.</p>
+
+<p>Aasman ka badalta colour, halki hawa aur aas paas ki khamoshi ek simple moment ko memorable bana deti hai.</p>
+
+<p>Woh shaam shayad isi liye yaad reh gayi kyunki us waqt kuch bhi extraordinary nahi tha.</p>
+`
+},
+
+15:{
+category:"LIFE",
+title:"Alfaaz",
+image:"https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=90",
+text:`
+<p>Kuch feelings ko bolna mushkil hota hai. Kabhi kabhi words bhi kam pad jaate hain.</p>
+
+<p>Isi liye hum likhte hain. Jo baat keh nahi paate, use alfaaz ke through express kar dete hain.</p>
+
+<p>Shayad har insaan ke andar ek kahani hoti hai. Bas usse likhne ke liye kuch alfaaz chahiye hote hain.</p>
+`
+}
+
+};
+
+const params = new URLSearchParams(window.location.search);
+
+let number = parseInt(params.get("story")) || 1;
+
+if(!stories[number]){
+number = 1;
+}
+
+const current = stories[number];
+
+document.getElementById("category").textContent = current.category;
+document.getElementById("title").textContent = current.title;
+document.getElementById("cover").src = current.image;
+document.getElementById("cover").alt = current.title;
+document.getElementById("story").innerHTML = current.text;
+
+</script>
+
+</body>
+</html>
